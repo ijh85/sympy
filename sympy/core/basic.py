@@ -99,6 +99,7 @@ class Basic(Printable, metaclass=ManagedProperties):
     is_Float = False
     is_Rational = False
     is_Integer = False
+    is_Binary = False
     is_NumberSymbol = False
     is_Order = False
     is_Derivative = False
