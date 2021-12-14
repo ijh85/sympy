@@ -715,6 +715,8 @@ class Mul(Expr, AssocOp):
         # don't break up NC terms: (A*B)**3 != A**3*B**3, it is A*B*A*B*A*B
         cargs, nc = self.args_cnc(split_1=False)
 
+        if e.is_Binary:
+            return e
         if e.is_Integer:
             return Mul(*[Pow(b, e, evaluate=False) for b in cargs]) * \
                 Pow(Mul._from_args(nc), e, evaluate=False)
